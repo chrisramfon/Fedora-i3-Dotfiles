@@ -58,3 +58,50 @@ Fedora RPM Fusion Non Free Repo<br>
 
 Después de agregar los repositorios ejecuto el siguiente comando para actualizar.<br>
 `sudo dnf update`
+
+### Alacritty
+
+La instalación de Alacritty es muy simple ya que se encuentra en los repositorios de Fedora. Solo se tiene que ejecutar el siguiente comando.<br>
+`sudo dnf install alacritty`
+
+### Polybar
+
+Para instalar Polybar solo es necesario ejecutar el comando para instalarlo.<br>
+`sudo dnf install polybar`
+
+Una vez instalado se debe generar el archivo de configuración. En este caso voy a tomar el archivo de ejemplo para agregarlo en la configuración. Después de generar el archivo de configuración, se debe generar un archivo con permisos de ejecución, el cual contendrá la configuración para ejecutar una barra de ejemplo.
+
+Creo la carpeta Polybar dentro de .config<br>
+`mkdir ~/.config/polybar`
+
+Copio el archivo de ejemplo de configuración a la nueva carpeta.<br>
+`cp /etc/polybar/config.ini ~/.config/polybar/`
+
+Creo el archivo de ejecución.<br>
+`touch ~/.config/polybar/launch.sh`
+
+Agrego permisos de ejecución al archivo.<br>
+`chmod +x ~/.config/polybar/launch.sh`
+
+Abro el archivo launch.sh para decirle que ejecute la barra de ejemplo, voy a utilizar el código que se encuentra en la documentación.<br>
+`nano ~/.config/polybar/launch.sh`
+
+Código que va dentro de launch.sh<br>
+`
+#!/usr/bin/env bash
+
+# Terminate already running bar instances
+# If all your bars have ipc enabled, you can use 
+polybar-msg cmd quit
+# Otherwise you can use the nuclear option:
+# killall -q polybar
+
+# Launch bar1 and bar2
+echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+polybar example 2>&1 | tee -a /tmp/polybaremaple.log & disown
+
+echo "Bars launched..."
+`
+
+Compruebo que funciona polybar con el siguiente comando.<br>
+`polybar example`

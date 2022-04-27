@@ -86,7 +86,7 @@ Agrego permisos de ejecución al archivo.<br>
 Abro el archivo launch.sh para decirle que ejecute la barra de ejemplo, voy a utilizar el código que se encuentra en la documentación.<br>
 `nano ~/.config/polybar/launch.sh`
 
-Código que va dentro de launch.sh<br>
+Código que va dentro de launch.sh:<br>
 
 polybar-msg cmd quit
 

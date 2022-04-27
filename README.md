@@ -40,3 +40,21 @@ Hasta el día de hoy estos son los programas que se necesitan para que funcionen
 - Htop 
 - Feh 
 - Cava 
+
+## Instalación
+
+### Preparación
+
+Voy a asumir que la configuración de los dotfiles se hace con una instalación limpia de Fedora i3. Antes de comenzar a hacer cualquier cosa, primero me gusta agregar algunos repositorios, porque Fedora i3 es un spin y no cuenta con los mismos repositorios que Fedora Workstation. 
+
+Primero agrego el repositorio de Fedora Workstation con el siguiente comando:
+`sudo dnf install fedora-workstation-repositories`
+
+Fedora RPM Fusion Free Repo
+`sudo dnf install \https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm`
+
+Fedora RPM Fusion Non Free Repo
+`sudo dnf install \https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
+
+Después de agregar los repositorios ejecuto el siguiente comando para actualizar.
+`sudo dnf update`

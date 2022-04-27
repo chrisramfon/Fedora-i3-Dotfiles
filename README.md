@@ -90,10 +90,12 @@ Código que va dentro de launch.sh:<br>
 
 polybar-msg cmd quit
 
-echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log<br>
 polybar example 2>&1 | tee -a /tmp/polybaremaple.log & disown
 
 echo "Bars launched..."
 
 Compruebo que funciona polybar con el siguiente comando.<br>
 `polybar example`
+
+## Polybar Themes

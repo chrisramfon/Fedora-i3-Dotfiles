@@ -8,11 +8,18 @@ En este repositorio estan los dotfiles de mi entorno i3. Se omiten algunas confi
   <img src="https://i.ibb.co/fHjRwsD/Escritorio.png">
 </p>
 
+<p align = "center"> 
+    <img src ="https://i.ibb.co/WDCXLBZ/Escritorio2.png">
+</p>
+
+
 ## Objetivo
 
 Mi objetivo es aprender a utilizar mi primer tiling window manager mientras lo configuro a mi gusto personal. Si puedo ayudar a alguien que se encuentra en la misma situación que yo, sería genial. 
 
 ## Advertencias
+
+Aun me faltan hacer muchas configuraciones, con el tiempo las iré subiendo aquí.
 
 Para hacer la configuración es indispensable utilizar la consola de comandos de linux, además será necesario agregar algún comando extra, o escribirlo de otra manera si no estás utilizando Fedora i3 como yo. No soy un experto, esta es mi primera vez con un tiling window manager.
 Para lograr la instalación tuve que leer mucha documentación, de la cual el 100% se encuentra en inglés, así que si eres principiante al igual que yo, te aseguro que en algún momento tendrás que leer dicha documentación.

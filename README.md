@@ -5,6 +5,6 @@ En este repositorio estan los dotfiles de mi entorno i3. Se omiten algunas confi
 ## Vista previa
 
 <p align="center">
-  <img src="./Escritorio.png">
+  <img src="https://i.ibb.co/fHjRwsD/Escritorio.png">
 </p>
 

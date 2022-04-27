@@ -117,5 +117,21 @@ Asigno permisos al archivo setup.sh.<br>
 Ejecuto el archivo setup.sh y selecciono la opción 1 dentro de la terminal.<br>
 `./setup.sh`
 
-Por ultimo ejecuto una de las barras para validar que se instalaron correctamente.
+Por ultimo ejecuto una de las barras para validar que se instalaron correctamente.<br>
 `bash ~/.config/polybar/launch.sh --shapes`
+
+### i3 Gaps
+
+Para instalar i3 Gaps en Fedora solo basta con ejecutar un comando. En mi caso ya tengo instalado i3 así que eso generará un conflicto. Así que para instalarlo tendré que agregar --allowerasing.<br>
+`sudo dnf install i3-gaps --allowerasing`
+
+### Picom
+
+Picom se puede instalar simplemente con un comando y después solo es necesario generar el archivo de configuraciones que en este caso se encuentra en este mismo repositorio.<br>
+`sudo dnf install picom`
+
+Clono este repositorio en la carpeta de descargas.<br>
+`git clone https://github.com/chrisramfon/Fedora-i3-Dotfiles.git`
+
+Copio el archivo de configuración.<br>
+`cp Fedora-i3-Dotfiles/picom/picom.conf ~/.config/`

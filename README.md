@@ -98,4 +98,24 @@ echo "Bars launched..."
 Compruebo que funciona polybar con el siguiente comando.<br>
 `polybar example`
 
-## Polybar Themes
+### Polybar Themes
+
+Polybar themes instala una gran cantidad de barras que pueden ser utilizadas. Es importante pasarse por la documentación ya que requiere una serie de dependencias para instalarlo. Además en la documentación se encuentran los pasos para hacer que se muestre la batería, control del brillo, iconos de aplicaciones en segundo plano, etc.
+
+Primero instalo git para poder clonar el repositorio.<br>
+`sudo dnf install git`
+
+Clono el repositorio en la carpeta de descargas.<br>
+`git clone --depth=1 https://github.com/adi1090x/polybar-themes.git`
+
+Ingreso a la carpeta de polybar themes.<br>
+`cd polybar-themes`
+
+Asigno permisos al archivo setup.sh.<br>
+`chmod +x setup.sh`
+
+Ejecuto el archivo setup.sh y selecciono la opción 1 dentro de la terminal.<br>
+`./setup.sh`
+
+Por ultimo ejecuto una de las barras para validar que se instalaron correctamente.
+`bash ~/.config/polybar/launch.sh --shapes`

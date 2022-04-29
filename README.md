@@ -135,3 +135,14 @@ Clono este repositorio en la carpeta de descargas.<br>
 
 Copio el archivo de configuración.<br>
 `cp Fedora-i3-Dotfiles/picom/picom.conf ~/.config/`
+
+### Rofi
+
+Instalo rofi con el siguiente comando.<br>
+`sudo dnf install rofi`
+
+Genero un archivo de configuración.<br>
+`mkdir -p ~/.config/rofi`
+
+Le asigno el nuevo archivo a rofi.<br>
+`rofi -dump-config > ~/.config/rofi/config.rasi`

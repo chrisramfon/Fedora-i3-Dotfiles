@@ -40,6 +40,7 @@ Hasta el día de hoy estos son los programas que se necesitan para que funcionen
 - Htop 
 - Feh 
 - Cava 
+- xrandr
 
 ## Instalación
 

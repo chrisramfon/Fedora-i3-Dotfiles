@@ -4,7 +4,7 @@
 [general]
 
 # Smoothing mode. Can be 'normal', 'scientific' or 'waves'. DEPRECATED as of 0.6.0
-; mode = normal
+; mode = scientific
 
 # Accepts only non-negative values.
 ; framerate = 60
@@ -21,7 +21,7 @@ sensitivity = 6
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-bars = 50
+bars = 85
 ; bar_width = 2
 ; bar_spacing = 1
 # bar_height is only used for output in "noritake" format
@@ -36,8 +36,8 @@ bars = 50
 # the bandwidth of the visualizer.
 # Note: there is a minimum total bandwidth of 43Mhz x number of bars.
 # Cava will automatically increase the higher cutoff if a too low band is specified.
-; lower_cutoff_freq = 50
-; higher_cutoff_freq = 10000
+lower_cutoff_freq = 20
+higher_cutoff_freq = 20000
 
 
 # Seconds with no input before cava goes to sleep mode. Cava will not perform FFT or drawing and
@@ -98,8 +98,8 @@ bars = 50
 # 'mono' outputs left to right lowest to highest frequencies.
 # 'mono_option' set mono to either take input from 'left', 'right' or 'average'.
 # set 'reverse' to 1 to display frequencies the other way around.
-; channels = stereo
-; mono_option = average
+channels = mono
+mono_option = average
 ; reverse = 0
 
 # Raw output target. A fifo will be created if target does not exist.
@@ -137,7 +137,7 @@ bars = 50
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'
-foreground = 'green'
+foreground = 'white'
 
 
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,

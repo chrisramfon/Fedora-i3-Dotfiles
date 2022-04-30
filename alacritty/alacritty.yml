@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1.0
+  opacity: 0.1
 
   # Startup Mode (changes require restart)
   #
@@ -125,8 +125,8 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '#000000'
-    foreground: '#ffffff'
+    background: '#ffffff'
+    foreground: '#a5a5a5'
   normal:
     black:   '#000000'
     red:     '#cc0403'

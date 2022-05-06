@@ -5,13 +5,16 @@ En este repositorio estan los dotfiles de mi entorno i3. Se omiten algunas confi
 ## Vista previa
 
 <p align="center">
-  <img src="https://i.ibb.co/fHjRwsD/Escritorio.png">
+  <img src="https://i.ibb.co/Sm3MCxN/captura3.png">
 </p>
 
 <p align = "center"> 
-    <img src ="https://i.ibb.co/WDCXLBZ/Escritorio2.png">
+    <img src ="https://i.ibb.co/tDPmKsY/captura1.png">
 </p>
 
+<p align = "center"> 
+    <img src ="https://i.ibb.co/Xy3c53m/captura2.png">
+</p>
 
 ## Objetivo
 

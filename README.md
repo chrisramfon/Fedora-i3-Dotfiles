@@ -155,3 +155,9 @@ Este paquete permite modificar el display manager que viene por defecto en Fedor
 
 Una vez descargado el archivo simplemente se instala con el siguiente comando.<br>
 `sudo dnf install lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm`
+
+## Probemas
+
+### Wifi se deconecta de forma aleatoria
+
+<a href = "https://ask.fedoraproject.org/t/how-to-keep-internet-connection-connected-without-interruption/15767/3"><b>Correr el comando de esta página para corregir el problema.</b></a>

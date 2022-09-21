@@ -28,6 +28,8 @@ Aun me faltan hacer muchas configuraciones, con el tiempo las iré subiendo aqu�
 Para hacer la configuración es indispensable utilizar la consola de comandos de linux, además será necesario agregar algún comando extra, o escribirlo de otra manera si no estás utilizando Fedora i3 como yo. No soy un experto, esta es mi primera vez con un tiling window manager.
 Para lograr la instalación tuve que leer mucha documentación, de la cual el 100% se encuentra en inglés, así que si eres principiante al igual que yo, te aseguro que en algún momento tendrás que leer dicha documentación.
 
+Por defecto picom no se ejecuta con el efecto de blur o desenfoque en las transparencias debido a que puede ocasionar que la maquina se congele (solo me ha pasado en máquinas virtuales). Para habilitar el efecto solo se tiene que comentar la linea indicada en el archivo de configuración de i3 y descomentar la linea indicada por los comentarios. En caso de que se congele la maquina, se tiene que hacer un reinicio forzado y sin entrar a i3 ejecutar la terminal y volver a comentar y descomentar las lineas de comando.
+
 ## Requisitos o dependencias
 
 Hasta el día de hoy estos son los programas que se necesitan para que funcionen las configuraciones. Algunos a su vez tienen otros requisitos que tienen que ser instalados, trataré de agregar su link a Github. Con el paso del tiempo, trataré de ir dejando los pasos para instalar cada una de las dependencias.

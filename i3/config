@@ -187,8 +187,10 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id feh --bg-scale /home/chrisramfon/Imagenes/wallhaven-yjkd1k_1920x1080.png
 
 #picom con blur = linea 188 | sin blur = linea 187
-#exec_always --no-startup-id picom -b
-exec_always --no-startup-id picom --experimental-backends -b
+#Sin efecto de blur en las transparencias
+exec_always --no-startup-id picom -b
+#Efecto de blur en las transparencias
+#exec_always --no-startup-id picom --experimental-backends -b
 
 #Polybar_____________________
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh

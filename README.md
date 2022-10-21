@@ -1,7 +1,7 @@
 # Fedora-i3-Dotfiles
 
 En este repositorio están los dotfiles de mi entorno i3. Faltan módulos por agregar y otros por configurar, pero con el tiempo los iré agregando.
-Las pruebas para validar si funcionan las configuraciones que se van haciendo se realizaron en una maquina virtual. Cuando confirme que alguna modificacion funciona correcatmente, la subiré al repositorio.
+Las pruebas para validar si funcionan las configuraciones que se van haciendo se realizaron en una máquina virtual. Cuando confirme que alguna modificación funciona correctamente, la subiré al repositorio.
 
 ## Vista previa
 
@@ -28,7 +28,7 @@ Aun me faltan hacer muchas configuraciones, cuando tenga tiempo las iré subiend
 Para hacer la configuración es obligatorio utilizar la consola de comandos de linux, además será necesario agregar algún comando extra o escribirlo de otra manera si no estás utilizando Fedora como yo. No soy un experto, esta es mi primera vez con un tiling window manager.
 Para lograr la instalación tuve que leer mucha documentación, de la cual el 100% se encuentra en inglés, así que si eres principiante al igual que yo, te aseguro que en algún momento tendrás que leer.
 
-Por defecto picom no se ejecuta con el efecto de blur o desenfoque en las transparencias debido a que puede ocasionar que la maquina se congele (solo me ha pasado en máquinas virtuales). Para habilitar el efecto solo se tiene que comentar la linea indicada en el archivo de configuración de i3 y descomentar la otra. En caso de que se congele la maquina, se tiene que hacer un reinicio forzado y sin entrar a i3 ejecutar la terminal y volver a comentar y descomentar las lineas de comando.
+Por defecto picom no se ejecuta con el efecto de blur o desenfoque en las transparencias debido a que puede ocasionar que la máquina se congele (solo me ha pasado en máquinas virtuales). Para habilitar el efecto solo se tiene que comentar la línea indicada en el archivo de configuración de i3 y descomentar la otra. En caso de que se congele la máquina, se tiene que hacer un reinicio forzado y sin entrar a i3 ejecutar la terminal y volver a comentar y descomentar las lineas de comando.
 
 ## Requisitos o dependencias
 
@@ -53,7 +53,7 @@ Hasta el día de hoy estos son los programas que se necesitan para que funcionen
 
 ### Preparación
 
-Antes de comenzar a hacer cualquier cosa, primero me gusta agregar algunos repositorios extra porque Fedora i3 es un spin y no cuenta con los mismos que Fedora Workstation. 
+Antes de comenzar a hacer cualquier cosa, primero me gusta agregar algunos repositorios extra porque el spin de Fedora i3 no cuenta con los mismos que Fedora Workstation. 
 
 Repositorio de Fedora Workstation.<br>
 ```
@@ -103,9 +103,9 @@ Para instalar Polybar solo es necesario ejecutar el comando para instalarlo.<br>
 sudo dnf install polybar
 ```
 
-Una vez instalado se debe generar el archivo de configuración. En este caso voy a tomar el archivo de ejemplo para agregarlo en la configuración. Después de generar el archivo de configuración, se debe generar un archivo con permisos de ejecución, el cual contendrá la configuración para ejecutar una barra de ejemplo.
+Una vez instalado se debe generar el archivo de configuración. En este caso voy a tomar el archivo de ejemplo. Después de generar el archivo de configuración, se debe crear otro archivo con permisos de ejecución, el cual contendrá la configuración para ejecutar una barra de ejemplo.
 
-Creo la carpeta Polybar dentro de .config<br>
+Creo la carpeta Polybar dentro de `~/.config/`<br>
 ```
 mkdir ~/.config/polybar
 ```
@@ -148,11 +148,6 @@ polybar example
 
 Polybar themes instala una gran cantidad de barras que pueden ser utilizadas. Es importante pasarse por la documentación ya que requiere una serie de dependencias para instalarlo. Además en la documentación se encuentran los pasos para hacer que se muestre la batería, control del brillo, iconos de aplicaciones en segundo plano, etc.
 
-Primero instalo git para poder clonar el repositorio.<br>
-```
-sudo dnf install git
-```
-
 Clono el repositorio en la carpeta de descargas.<br>
 ```
 git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
@@ -173,7 +168,7 @@ Ejecuto el archivo setup.sh y selecciono la opción 1 dentro de la terminal.<br>
 ./setup.sh
 ```
 
-Por ultimo ejecuto una de las barras para validar que se instalaron correctamente.<br>
+Por último ejecuto una de las barras para validar que se instalaron correctamente.<br>
 ```
 bash ~/.config/polybar/launch.sh --shapes
 ```
@@ -200,22 +195,16 @@ Genero un archivo de configuración.<br>
 mkdir -p ~/.config/rofi
 ```
 
-Le asigno el nuevo archivo a rofi.<br>
+Le asigno el nuevo archivo a Rofi.<br>
 ```
 rofi -dump-config > ~/.config/rofi/config.rasi
 ```
 
 ### Lightdm webkit2 greeter
 
-Este paquete permite modificar el display manager que viene por defecto en Fedora i3 ya que con el se pueden agregar temas para mejorar mucho el aspecto de lightdm. En principio debería ser sencillo instalarlo, pero en Fedora es algo complicado ya que el repositorio oficial de github no ha sido actualizado desde hace 2 años, es por eso que agrego el proceso que seguí para instalarlo. Realmente el procedimiento es simple, solo se descarga el .rpm y listo, lo complicado fue encontrar el correcto. El que a mi me funcionó fue el que se encuentra en el reposotorio llamado Raven, pero como no quiero agregar el repo, solo descargué el rpm desde <a href = "https://centos.pkgs.org/8/raven-x86_64/lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm.html"><b>aquí</b></a>. Para instalar las dependencias no necesité nada más que los repositorios que mencioné en la preparación.
+Este paquete permite modificar el display manager que viene por defecto en Fedora i3 ya que con él se pueden agregar temas para mejorar mucho el aspecto de lightdm. En principio debería ser sencillo instalarlo, pero en Fedora es algo complicado ya que el repositorio oficial de github no ha sido actualizado desde hace 2 años, es por eso que agrego el proceso que seguí para instalarlo. Realmente el procedimiento es simple, solo se descarga el .rpm y listo, lo complicado fue encontrar el correcto. El que a mi me funcionó fue el que se encuentra en el reposotorio llamado Raven, pero como no quiero agregar el repo, solo descargué el rpm desde <a href = "https://centos.pkgs.org/8/raven-x86_64/lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm.html"><b>aquí</b></a>. Para instalar las dependencias no necesité nada más que los repositorios que mencioné en la preparación.
 
 Una vez descargado el archivo simplemente se instala con el siguiente comando.<br>
 ```
 sudo dnf install lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm
 ```
-
-## Probemas
-
-### Wifi se deconecta de forma aleatoria
-
-<a href = "https://ask.fedoraproject.org/t/how-to-keep-internet-connection-connected-without-interruption/15767/3"><b>Correr el comando de esta página para corregir el problema.</b></a>

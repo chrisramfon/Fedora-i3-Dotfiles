@@ -61,108 +61,157 @@ sudo dnf install fedora-workstation-repositories
 ```
 
 Fedora RPM Fusion Free Repo<br>
-`sudo dnf install \https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm`
+```
+sudo dnf install \https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+```
 
 Fedora RPM Fusion Non Free Repo<br>
-`sudo dnf install \https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
+```
+sudo dnf install \https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
 
 Después de agregar los repositorios ejecuto el siguiente comando para actualizar.<br>
-`sudo dnf update`
+```
+sudo dnf update
+```
 
 ### Alacritty
 
 La instalación de Alacritty es muy simple ya que se encuentra en los repositorios de Fedora. Solo se tiene que ejecutar el siguiente comando.<br>
-`sudo dnf install alacritty`
+```
+sudo dnf install alacritty
+```
 
 ### Polybar
 
 Para instalar Polybar solo es necesario ejecutar el comando para instalarlo.<br>
-`sudo dnf install polybar`
+```
+sudo dnf install polybar
+```
 
 Una vez instalado se debe generar el archivo de configuración. En este caso voy a tomar el archivo de ejemplo para agregarlo en la configuración. Después de generar el archivo de configuración, se debe generar un archivo con permisos de ejecución, el cual contendrá la configuración para ejecutar una barra de ejemplo.
 
 Creo la carpeta Polybar dentro de .config<br>
-`mkdir ~/.config/polybar`
+```
+mkdir ~/.config/polybar
+```
 
 Copio el archivo de ejemplo de configuración a la nueva carpeta.<br>
-`cp /etc/polybar/config.ini ~/.config/polybar/`
+```
+cp /etc/polybar/config.ini ~/.config/polybar/
+```
 
 Creo el archivo de ejecución.<br>
-`touch ~/.config/polybar/launch.sh`
+```
+touch ~/.config/polybar/launch.sh
+```
 
 Agrego permisos de ejecución al archivo.<br>
-`chmod +x ~/.config/polybar/launch.sh`
+```
+chmod +x ~/.config/polybar/launch.sh
+```
 
 Abro el archivo launch.sh para decirle que ejecute la barra de ejemplo, voy a utilizar el código que se encuentra en la documentación.<br>
-`nano ~/.config/polybar/launch.sh`
+```
+nano ~/.config/polybar/launch.sh
+```
 
 Código que va dentro de launch.sh:<br>
-
+```
 polybar-msg cmd quit
 
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log<br>
 polybar example 2>&1 | tee -a /tmp/polybaremaple.log & disown
 
-echo "Bars launched..."
-
-Compruebo que funciona polybar con el siguiente comando.<br>
-`polybar example`
+echo "Bar launched..."
+```
+Compruebo que funcione polybar con el siguiente comando.<br>
+```
+polybar example
+```
 
 ### Polybar Themes
 
 Polybar themes instala una gran cantidad de barras que pueden ser utilizadas. Es importante pasarse por la documentación ya que requiere una serie de dependencias para instalarlo. Además en la documentación se encuentran los pasos para hacer que se muestre la batería, control del brillo, iconos de aplicaciones en segundo plano, etc.
 
 Primero instalo git para poder clonar el repositorio.<br>
-`sudo dnf install git`
+```
+sudo dnf install git
+```
 
 Clono el repositorio en la carpeta de descargas.<br>
-`git clone --depth=1 https://github.com/adi1090x/polybar-themes.git`
+```
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+```
 
 Ingreso a la carpeta de polybar themes.<br>
-`cd polybar-themes`
+```
+cd polybar-themes
+```
 
 Asigno permisos al archivo setup.sh.<br>
-`chmod +x setup.sh`
+```
+chmod +x setup.sh
+```
 
 Ejecuto el archivo setup.sh y selecciono la opción 1 dentro de la terminal.<br>
-`./setup.sh`
+```
+./setup.sh
+```
 
 Por ultimo ejecuto una de las barras para validar que se instalaron correctamente.<br>
-`bash ~/.config/polybar/launch.sh --shapes`
+```
+bash ~/.config/polybar/launch.sh --shapes
+```
 
 ### i3 Gaps
 
 Para instalar i3 Gaps en Fedora solo basta con ejecutar un comando. En mi caso ya tengo instalado i3 así que eso generará un conflicto. Así que para instalarlo tendré que agregar --allowerasing.<br>
-`sudo dnf install i3-gaps --allowerasing`
+```
+sudo dnf install i3-gaps --allowerasing
+```
 
 ### Picom
 
 Picom se puede instalar simplemente con un comando y después solo es necesario generar el archivo de configuraciones que en este caso se encuentra en este mismo repositorio.<br>
-`sudo dnf install picom`
+```
+sudo dnf install picom
+```
 
 Clono este repositorio en la carpeta de descargas.<br>
-`git clone https://github.com/chrisramfon/Fedora-i3-Dotfiles.git`
+```
+git clone https://github.com/chrisramfon/Fedora-i3-Dotfiles.git
+```
 
 Copio el archivo de configuración.<br>
-`cp Fedora-i3-Dotfiles/picom/picom.conf ~/.config/`
+```
+cp Fedora-i3-Dotfiles/picom/picom.conf ~/.config/
+```
 
 ### Rofi
 
 Instalo rofi con el siguiente comando.<br>
-`sudo dnf install rofi`
+```sudo dnf install rofi
+```
 
 Genero un archivo de configuración.<br>
-`mkdir -p ~/.config/rofi`
+```
+mkdir -p ~/.config/rofi
+```
 
 Le asigno el nuevo archivo a rofi.<br>
-`rofi -dump-config > ~/.config/rofi/config.rasi`
+```
+rofi -dump-config > ~/.config/rofi/config.rasi
+```
 
 ### Lightdm webkit2 greeter
 
 Este paquete permite modificar el display manager que viene por defecto en Fedora i3 ya que con el se pueden agregar temas para mejorar mucho el aspecto de lightdm. En principio debería ser sencillo instalarlo, pero en Fedora es algo complicado ya que el repositorio oficial de github no ha sido actualizado desde hace 2 años, es por eso que agrego el proceso que seguí para instalarlo. Realmente el procedimiento es simple, solo se descarga el .rpm y listo, lo complicado fue encontrar el correcto. El que a mi me funcionó fue el que se encuentra en el reposotorio llamado Raven, pero como no quiero agregar el repo, solo descargué el rpm desde <a href = "https://centos.pkgs.org/8/raven-x86_64/lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm.html"><b>aquí</b></a>. Para instalar las dependencias no necesité nada más que los repositorios que mencioné en la preparación.
 
 Una vez descargado el archivo simplemente se instala con el siguiente comando.<br>
-`sudo dnf install lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm`
+```
+sudo dnf install lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm
+```
 
 ## Probemas
 

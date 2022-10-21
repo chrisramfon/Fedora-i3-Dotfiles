@@ -173,7 +173,6 @@ Por último ejecuto una de las barras para validar que se instalaron correctamen
 bash ~/.config/polybar/launch.sh --shapes
 ```
 
-
 Clono este repositorio en la carpeta de descargas.<br>
 ```
 git clone https://github.com/chrisramfon/Fedora-i3-Dotfiles.git
@@ -187,7 +186,8 @@ cp Fedora-i3-Dotfiles/picom/picom.conf ~/.config/
 ### Rofi
 
 Instalo rofi con el siguiente comando.<br>
-```sudo dnf install rofi
+```
+sudo dnf install rofi
 ```
 
 Genero un archivo de configuración.<br>

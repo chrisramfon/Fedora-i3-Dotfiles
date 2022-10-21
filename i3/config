@@ -181,24 +181,24 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-#------------------------------------My config
-
-#Fondo de pantalla
+# Fondo de pantalla
 exec_always --no-startup-id feh --bg-scale /home/chrisramfon/Imagenes/wallhaven-yjkd1k_1920x1080.png
 
-#picom con blur = linea 188 | sin blur = linea 187
-#Sin efecto de blur en las transparencias
+# Sin efecto de blur en las transparencias
 exec_always --no-startup-id picom -b
-#Efecto de blur en las transparencias
+
+# Efecto de blur en las transparencias
 #exec_always --no-startup-id picom --experimental-backends -b
 
-#Polybar_____________________
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id bash ~/.config/polybar/launch.sh --shapes
+# Polybar barra personalizada
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-#Bordes----------------------
+# Polybar tema shapes
+#exec_always --no-startup-id bash ~/.config/polybar/launch.sh --shapes
+
+# Bordes
 default_border pixel 0
 
-#Espacios
+# Espacios
 gaps inner 12
 

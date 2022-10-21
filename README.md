@@ -19,16 +19,16 @@ Las pruebas para validar si funcionan las configuraciones que se van haciendo se
 
 ## Objetivo
 
-Mi objetivo es aprender a utilizar mi primer tiling window manager mientras lo configuro a mi gusto personal. Si puedo ayudar a alguien que se encuentra en la misma situación que yo, sería genial. 
+Mi objetivo es aprender a utilizar mi primer tiling window manager mientras lo configuro a mi gusto personal. 
 
 ## Advertencias
 
-Aun me faltan hacer muchas configuraciones, con el tiempo las iré subiendo aquí.
+Aun me faltan hacer muchas configuraciones, cuando tenga tiempo las iré subiendo aquí.
 
-Para hacer la configuración es indispensable utilizar la consola de comandos de linux, además será necesario agregar algún comando extra, o escribirlo de otra manera si no estás utilizando Fedora i3 como yo. No soy un experto, esta es mi primera vez con un tiling window manager.
-Para lograr la instalación tuve que leer mucha documentación, de la cual el 100% se encuentra en inglés, así que si eres principiante al igual que yo, te aseguro que en algún momento tendrás que leer dicha documentación.
+Para hacer la configuración es obligatorio utilizar la consola de comandos de linux, además será necesario agregar algún comando extra o escribirlo de otra manera si no estás utilizando Fedora como yo. No soy un experto, esta es mi primera vez con un tiling window manager.
+Para lograr la instalación tuve que leer mucha documentación, de la cual el 100% se encuentra en inglés, así que si eres principiante al igual que yo, te aseguro que en algún momento tendrás que leer.
 
-Por defecto picom no se ejecuta con el efecto de blur o desenfoque en las transparencias debido a que puede ocasionar que la maquina se congele (solo me ha pasado en máquinas virtuales). Para habilitar el efecto solo se tiene que comentar la linea indicada en el archivo de configuración de i3 y descomentar la linea indicada por los comentarios. En caso de que se congele la maquina, se tiene que hacer un reinicio forzado y sin entrar a i3 ejecutar la terminal y volver a comentar y descomentar las lineas de comando.
+Por defecto picom no se ejecuta con el efecto de blur o desenfoque en las transparencias debido a que puede ocasionar que la maquina se congele (solo me ha pasado en máquinas virtuales). Para habilitar el efecto solo se tiene que comentar la linea indicada en el archivo de configuración de i3 y descomentar la otra. En caso de que se congele la maquina, se tiene que hacer un reinicio forzado y sin entrar a i3 ejecutar la terminal y volver a comentar y descomentar las lineas de comando.
 
 ## Requisitos o dependencias
 
@@ -36,16 +36,16 @@ Hasta el día de hoy estos son los programas que se necesitan para que funcionen
 
 - <a href = "https://github.com/Airblader/i3/wiki/installation"><b>i3 Gaps</b></a> (En Fedora i3 es necesario remplazar el que viene por defecto por este)
 - <a href = "https://github.com/polybar/polybar/wiki/"><b>Polybar</b></a> 
-- <a href = "https://github.com/adi1090x/polybar-themes"><b>Polybar Themes</b></a> (Yo utilizo la barra "shapes". Si no funciona el indicador de batería, tray icons, brillo, etc, leer la documentación)
+- <a href = "https://github.com/adi1090x/polybar-themes"><b>Polybar Themes</b></a> (Recomiendo el tema llamado "shapes". Si no funciona el indicador de batería, tray icons, brillo, etc, leer la documentación)
 - Alacritty 
 - <a href = "https://wiki.archlinux.org/title/Picom"><b>Picom</b></a> 
-- Neofetch
-- Ranger 
+- Neofetch (opcional)
+- Ranger (opcional)
 - Rofi
-- Btop 
-- Htop 
+- Btop (opcional)
+- Htop (opcional)
 - Feh 
-- Cava 
+- Cava (opcional)
 - Xrandr
 - Lightdm webkit2 greeter
 
@@ -53,9 +53,9 @@ Hasta el día de hoy estos son los programas que se necesitan para que funcionen
 
 ### Preparación
 
-Voy a asumir que la configuración de los dotfiles se hace con una instalación limpia de Fedora i3. Antes de comenzar a hacer cualquier cosa, primero me gusta agregar algunos repositorios, porque Fedora i3 es un spin y no cuenta con los mismos repositorios que Fedora Workstation. 
+Antes de comenzar a hacer cualquier cosa, primero me gusta agregar algunos repositorios extra porque Fedora i3 es un spin y no cuenta con los mismos que Fedora Workstation. 
 
-Primero agrego el repositorio de Fedora Workstation con el siguiente comando.<br>
+Repositorio de Fedora Workstation.<br>
 ```
 sudo dnf install fedora-workstation-repositories
 ```
@@ -75,9 +75,23 @@ Después de agregar los repositorios ejecuto el siguiente comando para actualiza
 sudo dnf update
 ```
 
+### i3 Gaps
+
+Para instalar i3 Gaps en Fedora solo basta con ejecutar un comando. En mi caso ya tengo instalado i3 así que eso generará un conflicto, la forma de forzar la instalación es agregando `--allowerasing` al final del comando.<br>
+```
+sudo dnf install i3-gaps --allowerasing
+```
+
+### Picom
+
+Picom se puede instalar igualmente con un comando, después solo es necesario copiar a la ruta `~/.config/` el archivo de configuraciones que está en este mismo repositorio.<br>
+```
+sudo dnf install picom
+```
+
 ### Alacritty
 
-La instalación de Alacritty es muy simple ya que se encuentra en los repositorios de Fedora. Solo se tiene que ejecutar el siguiente comando.<br>
+Alacritty se instala de la misma forma, usando el administrador de paquetes por defecto.<br>
 ```
 sudo dnf install alacritty
 ```
@@ -164,19 +178,6 @@ Por ultimo ejecuto una de las barras para validar que se instalaron correctament
 bash ~/.config/polybar/launch.sh --shapes
 ```
 
-### i3 Gaps
-
-Para instalar i3 Gaps en Fedora solo basta con ejecutar un comando. En mi caso ya tengo instalado i3 así que eso generará un conflicto. Así que para instalarlo tendré que agregar --allowerasing.<br>
-```
-sudo dnf install i3-gaps --allowerasing
-```
-
-### Picom
-
-Picom se puede instalar simplemente con un comando y después solo es necesario generar el archivo de configuraciones que en este caso se encuentra en este mismo repositorio.<br>
-```
-sudo dnf install picom
-```
 
 Clono este repositorio en la carpeta de descargas.<br>
 ```

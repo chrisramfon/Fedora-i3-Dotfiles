@@ -12,7 +12,7 @@
 	selbg:                      #e3e3e3;
 	actbg:                      #ffffff;
 	urgbg:                      #e53935;
-	winbg:						#0F1212;
+	winbg:						#000000;
 
 	selected-normal-foreground: @winbg;
 	normal-foreground:          @text-color;
@@ -35,6 +35,8 @@
 #window {
     background-color: 			@background-color;
 	children: 					[mainbox];
+    height:                     600px;
+    border:                     0;
 }
 
 #mainbox {
@@ -92,7 +94,7 @@ button {
 }
 
 #element.normal.normal {
-    background-color: @normal-background;
+    background-color: #00000088; /*@normal-background;*/
     text-color:       @normal-foreground;
 }
 
@@ -122,12 +124,12 @@ button {
 }
 
 #element.alternate.normal {
-    background-color: #43a047;
-    text-color:       @alternate-normal-foreground;
+    background-color: #FFFFFF11; /*Fondo de las opciones par*/
+    text-color:       #ffffff; /*@alternate-normal-foreground*/
 }
 
 #element.alternate.urgent {
-    background-color: #43a047;
+    background-color: #43a047aa;
     text-color:       @alternate-urgent-foreground;
 }
 

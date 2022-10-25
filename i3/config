@@ -182,7 +182,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # Fondo de pantalla
-exec_always --no-startup-id feh --bg-scale /home/chrisramfon/Imagenes/wallhaven-yjkd1k_1920x1080.png
+exec --no-startup-id feh --bg-scale /home/chrisramfon/Pictures/wallhaven-yjkd1k_1920x1080.png
 
 # Sin efecto de blur en las transparencias
 exec_always --no-startup-id picom -b
@@ -198,6 +198,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Bordes
 default_border pixel 0
+for_window [floating] border pixel 0
 
 # Espacios
 gaps inner 12

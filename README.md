@@ -200,6 +200,24 @@ Le asigno el nuevo archivo a Rofi.<br>
 rofi -dump-config > ~/.config/rofi/config.rasi
 ```
 
+### Script rofiLogOut
+El script rofiLogOut funciona como una alternativa a la opción que usa i3 por defecto con demenu. Utiliza Rofi para mostrar una serie de opciones como: apagar, reiniciar, cerrar sesión y bloquear. No es obligatorio utilizarlo pero es útil ya que agrega varias funciones al pulsar la combinación de teclas.
+
+Primero creo una carpeta dentro de home para agregar el script.
+```
+mkdir ~/.bin
+```
+
+Una vez creada la carpeta copio el archivo llamado rofiLogOut que está en este repositorio.
+```
+cp Fedora-i3-Dotfiles/bin/rofiLogOut ~/.bin/
+```
+
+Con eso ya debería funcionar, pero en caso que no ocurra nada al presionar la combinación de teclas, agregamos permisos al archivo del script.
+```
+sudo chmod +x ~/.bin/rofiLogOut
+```
+
 ### Lightdm webkit2 greeter
 
 Este paquete permite modificar el display manager que viene por defecto en Fedora i3 ya que con él se pueden agregar temas para mejorar mucho el aspecto de lightdm. En principio debería ser sencillo instalarlo, pero en Fedora es algo complicado ya que el repositorio oficial de github no ha sido actualizado desde hace 2 años, es por eso que agrego el proceso que seguí para instalarlo. Realmente el procedimiento es simple, solo se descarga el .rpm y listo, lo complicado fue encontrar el correcto. El que a mi me funcionó fue el que se encuentra en el reposotorio llamado Raven, pero como no quiero agregar el repo, solo descargué el rpm desde <a href = "https://centos.pkgs.org/8/raven-x86_64/lightdm-webkit2-greeter-2.2.5-1.el8.x86_64.rpm.html"><b>aquí</b></a>. Para instalar las dependencias no necesité nada más que los repositorios que mencioné en la preparación.

@@ -28,7 +28,7 @@ Aun me faltan hacer muchas configuraciones, cuando tenga tiempo las iré subiend
 Para hacer la configuración es obligatorio utilizar la consola de comandos de linux, además será necesario agregar algún comando extra o escribirlo de otra manera si no estás utilizando Fedora como yo. No soy un experto, esta es mi primera vez con un tiling window manager.
 Para lograr la instalación tuve que leer mucha documentación, de la cual el 100% se encuentra en inglés, así que si eres principiante al igual que yo, te aseguro que en algún momento tendrás que leer.
 
-Por defecto picom no se ejecuta con el efecto de blur o desenfoque en las transparencias debido a que puede ocasionar que la máquina se congele (solo me ha pasado en máquinas virtuales). Para habilitar el efecto solo se tiene que comentar la línea indicada en el archivo de configuración de i3 y descomentar la otra. En caso de que se congele la máquina, se tiene que hacer un reinicio forzado y sin entrar a i3 ejecutar la terminal y volver a comentar y descomentar las lineas de comando.
+La configuración del blur en las transparencias está deshabilitada por defecto porque no funciona de manera estable. Si habilitas la opción asegúrate que el backend configurado sea 'glx' o de lo contrario se irá consumiendo poco a poco la ram hasta que se utiliza por completo.
 
 ## Requisitos o dependencias
 

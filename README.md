@@ -48,6 +48,7 @@ Hasta el día de hoy estos son los programas que se necesitan para que funcionen
 - Cava (opcional)
 - Xrandr
 - Lightdm webkit2 greeter
+- <a href = "https://github.com/betterlockscreen/betterlockscreen"><b>Betterlockscreen</b></a> 
 
 ## Instalación
 
@@ -198,6 +199,24 @@ mkdir -p ~/.config/rofi
 Le asigno el nuevo archivo a Rofi.<br>
 ```
 rofi -dump-config > ~/.config/rofi/config.rasi
+```
+
+### Script rofiLogOut
+El script rofiLogOut funciona como una alternativa a la opción que usa i3 por defecto con demenu. Utiliza Rofi para mostrar una serie de opciones como: apagar, reiniciar, cerrar sesión y bloquear. No es obligatorio utilizarlo pero es útil ya que agrega varias funciones al pulsar la combinación de teclas.
+
+Primero creo una carpeta dentro de home para agregar el script.
+```
+mkdir ~/.bin
+```
+
+Una vez creada la carpeta copio el archivo llamado rofiLogOut que está en este repositorio.
+```
+cp Fedora-i3-Dotfiles/bin/rofiLogOut ~/.bin/
+```
+
+Con eso ya debería funcionar, pero en caso que no ocurra nada al presionar la combinación de teclas, agregamos permisos al archivo del script.
+```
+sudo chmod +x ~/.bin/rofiLogOut
 ```
 
 ### Lightdm webkit2 greeter

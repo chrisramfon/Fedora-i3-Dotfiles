@@ -78,7 +78,7 @@ sudo dnf update
 ```
 
 ### i3 Gaps
-
+(i3 recibió un merge de i3-gaps, por lo que a partir de la versión 4.22 ya contará con soporte de gaps de manera nativa)<br>
 Para instalar i3 Gaps en Fedora solo basta con ejecutar un comando. En mi caso ya tengo instalado i3 así que eso generará un conflicto, la forma de forzar la instalación es agregando `--allowerasing` al final del comando.<br>
 ```
 sudo dnf install i3-gaps --allowerasing

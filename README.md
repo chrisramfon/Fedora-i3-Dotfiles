@@ -48,7 +48,8 @@ Hasta el día de hoy estos son los programas que se necesitan para que funcionen
 - Cava (opcional)
 - Xrandr
 - Lightdm webkit2 greeter
-- <a href = "https://github.com/betterlockscreen/betterlockscreen"><b>Betterlockscreen</b></a> 
+- <a href = "https://github.com/betterlockscreen/betterlockscreen"><b>Betterlockscreen</b></a>
+- Flameshot
 
 ## Instalación
 
